@@ -4,6 +4,6 @@
 print("Odd Vs. Even")
 alpha = int(input ("Input an integer: \n"))
 if (alpha % 2 == 0):
-    print("This number is an odd number")
-else:
     print("This number is an even number")
+else:
+    print("This number is an odd number")
