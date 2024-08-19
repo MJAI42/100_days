@@ -1,0 +1,6 @@
+print("Welcome to the Tip Calculator")
+bill_amount = float(input("What is the billed amount: \n"))
+tip_percentage = float(input("What is the tip percentage: 10 15 20\n"))
+num_people = float(input("Between how many people: \n"))
+payment_per_person = round(bill_amount * (1 + tip_percentage / 100) / num_people, 2)
+print(f"Your billed amount per person is: {payment_per_person}")
