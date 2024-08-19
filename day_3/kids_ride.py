@@ -4,10 +4,20 @@ if (height > 120):
     print("You are specced to ride.")
     age = int(input("What is your age?\n"))
     if (age < 12):
-        print("Please pay $5")
+        print("Child ticket, please pay $5")
+        bill = 5
     elif (age <= 18):
-        print("Please pay $7")
+        print("Youth ticket, please pay $7")
+        bill = 7
     else:
-        print("Please pay $12")
+        print("Adult tickets, please pay $12")
+        bill = 12
+    photo = input ("Do you want a photo? y/n\n")
+    if (photo == "y"):
+        bill += 3
+    
+    print (f"You final bill is {bill}")
+
+    
 else:
     print("You are not specced to ride")
