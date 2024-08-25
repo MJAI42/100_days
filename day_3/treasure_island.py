@@ -23,13 +23,12 @@ ____/______/______/______/______/_____"=.o|o_.--""___/______/______/______/____
 print("Welcome to Treasure Island.")
 print("Your mission is to find the treasure.\n")
 
-choice_1 = input('''You can go in the forest or cross the bridge,
-which one will you choose forest or bridge?\n''')
-choice_1 = choice_1.lower()
+choice_1 = input('You can go in the forest or cross the bridge,'
+                 'which one will you choose forest or bridge?\n').lower()
 if choice_1 == "forest":
     print('''
  __         __
-/  \.-"""-./  \
+/  \.-"""-./  \ 
 \    -   -    /
  |   o   o   |
  \  .-"""-.  /
@@ -45,9 +44,8 @@ if choice_1 == "forest":
         \/         \/         \/        \/          \/                 \/         \/ 
           ''')
 if choice_1 == "bridge":
-    choice_2 = input('''You cross the brige and walk towards the lake.
-your choices are to swim or wait\n''')
-    choice_2 = choice_2.lower()
+    choice_2 = input('You cross the brige and walk towards the lake.'
+                     'your choices are to swim or wait\n').lower()
     if choice_2 == "swim":
         print('''
               
@@ -71,10 +69,9 @@ your choices are to swim or wait\n''')
         \/         \/         \/        \/          \/                 \/         \/ 
           ''')
     elif choice_2 == "wait":
-        choice_3 = input('''A boat comes to take you to the other side of the lake.
-You find a castle which door do you choose?\n
-Red, Blue or Yellow\n''')
-        choice_3 = choice_3.lower()
+        choice_3 = input('A boat comes to take you to the other side of the lake.'
+                         'You find a castle which door do you choose?\n'
+                         'Red, Blue or Yellow\n').lower()
         if choice_3 == "yellow":
             print("\nCONGRATULATIONS! You Found The Treasure!")
             print('''
