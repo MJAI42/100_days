@@ -2,10 +2,9 @@ import random
 
 #variables
 word_list = ["ubuntu", "marvel", "glow", "amazing", "friends", "spidey"]
-r_num = random.randint(0, len(word_list) - 1)
 word_temp_list = []
 
-r_word = random.choice (word_list)[r_num]
+r_word = random.choice(word_list)
 word_temp = ""
 char_guess = ""
 
