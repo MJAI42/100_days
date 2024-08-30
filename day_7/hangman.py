@@ -3,34 +3,51 @@ import random
 #variables
 word_list = ["ubuntu", "marvel", "glow", "amazing", "friends", "spidey"]
 r_num = random.randint(0, len(word_list) - 1)
-word_guess_list = []
+word_temp_list = []
 
-r_word = word_list[r_num]
-word_guess = ""
+r_word = random.choice (word_list)[r_num]
+word_temp = ""
 char_guess = ""
 
 credit = 6
 count = 0
+wins = 0
 
 print("Welcome to hangman: Guess the word:")
+print(r_word)
 
 #print the dashes
-for char in r_word:
-    word_guess += "-"
-print(word_guess)
+while count < len(r_word):
+    word_temp_list.append("-")
+    count += 1
 
-#pick the first character and put it in lower case
-char_guess = input("Please input a character: \n")
-char_guess = char_guess[0].lower()
+for char in word_temp_list:
+    word_temp += char
 
-while credit > 0:
-    for char in r_word:
-        
+print(word_temp)
 
+while credit > 0 and wins < len(r_word):
+    #pick the first character and put it in lower case
+    char_guess = input("Please input a character: \n")
+    char_guess = char_guess[0].lower()
+    count = 0
     while count < len(r_word):
-        if char == char_guess:
-            word_guess.append(char_guess)
+        if r_word[count] == char_guess:
+            word_temp_list[count] = char_guess
             count += 1
+            wins += 1
+            word_temp = ""
+            for char in word_temp_list:
+                word_temp += char
+                print(word_temp)
         else:
-            word_guess.append("-")
             count += 1
+    if wins > 0:
+        print(f"you win:\n{word_temp}")
+    else:
+        print("you lose")
+        print(word_temp)
+        if credit > 0:
+            credit -= 1
+if credit == 0:
+    print("Game Over")
