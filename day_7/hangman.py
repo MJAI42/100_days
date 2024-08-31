@@ -6,10 +6,10 @@ from hangman_art import stages, logo
 print(logo)
 
 word_temp_list = []
-r_word = random.choice(hangman_words.word_list)
+r_word = random.choice(word_list)
 word_temp = ""
 char_guess = ""
-credit = 0
+credit = 6
 count = 0
 wins = 0
 game_wins = 0
@@ -25,8 +25,9 @@ for char in word_temp_list:
     word_temp += char
 
 print(word_temp)
+print(r_word)
 
-while credit < 6 and game_wins < len(r_word):
+while credit > 0 and game_wins < len(r_word):
     #pick the first character and put it in lower case
     print(f"****************************{6 - credit}/6 LIVES LEFT****************************")
     char_guess = input("Please input a character: \n")
@@ -35,7 +36,7 @@ while credit < 6 and game_wins < len(r_word):
     count = 0
     wins = 0
     if char_guess in word_temp:
-        print(f"You already guessed {char_guess}, guess another letter.")
+        print(f"You already guessed \"{char_guess}\", guess another letter.")
     else:
         #check if the letter is in the word
         while count < len(r_word):
@@ -54,11 +55,11 @@ while credit < 6 and game_wins < len(r_word):
         else:
             print(f"You guessed {char_guess}, that's not in the word. You lose a life.")
             print(word_temp)
-            if credit < 6:
-                credit += 1
-        print(HANGMANPICS[credit])
+            if credit > 0:
+                credit -= 1
+        print(stages[credit])
 #end the game
-if credit == 6:
+if credit == 0:
     print("***********************YOU LOSE - GAME OVER***********************")
 else:
     print("***********************YOU WIN - GAME OVER***********************")
