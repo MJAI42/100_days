@@ -1,64 +1,14 @@
 import random
 
-HANGMANPICS = ['''
-  +---+
-  |   |
-      |
-      |
-      |
-      |
-=========''', '''
-  +---+
-  |   |
-  O   |
-      |
-      |
-      |
-=========''', '''
-  +---+
-  |   |
-  O   |
-  |   |
-      |
-      |
-=========''', '''
-  +---+
-  |   |
-  O   |
- /|   |
-      |
-      |
-=========''', '''
-  +---+
-  |   |
-  O   |
- /|\  |
-      |
-      |
-=========''', '''
-  +---+
-  |   |
-  O   |
- /|\  |
- /    |
-      |
-=========''', '''
-  +---+
-  |   |
-  O   |
- /|\  |
- / \  |
-      |
-=========''']
+from hangman_words import word_list
+from hangman_art import stages, logo
 
-#variables
-word_list = ["ubuntu", "marvel", "glow", "amazing", "friends", "spidey"]
+print(logo)
+
 word_temp_list = []
-
-r_word = random.choice(word_list)
+r_word = random.choice(hangman_words.word_list)
 word_temp = ""
 char_guess = ""
-
 credit = 0
 count = 0
 wins = 0
