@@ -20,7 +20,6 @@ def encode_text (text, shift):
         #if it is a letter do the shift
         elif is_letter == True:
             alpha_shift = (position + shift - 1) % len(alphabet)
-            print(position)
             encoded_text += alphabet[alpha_shift]
     return (encoded_text)
 
@@ -44,6 +43,5 @@ def decode_text (text, shift):
         #if it is a letter do the shift
         elif is_letter == True:
             alpha_shift = (position - shift - 1) % len(alphabet)
-            print(position)
             decoded_text += alphabet[alpha_shift]
     return (decoded_text)
