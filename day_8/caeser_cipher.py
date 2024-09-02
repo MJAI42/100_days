@@ -1,7 +1,9 @@
 from encode_decode import encode_text, decode_text 
+from ascii_caeser_cipher import caeser, cipher
 alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
 
-
+print(caeser)
+print(cipher)
 repeat = "yes"
 while repeat == "yes":
     direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n").lower()
@@ -12,5 +14,5 @@ while repeat == "yes":
     elif direction == "decode":
         encoded_text = decode_text(text, shift)
     print(f"Your encoded text is: {encoded_text}")
-    repeat = input("Would you like to encode or decode another message?")
 
+    repeat = input("Would you like to encode or decode another message?")
