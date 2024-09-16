@@ -20,41 +20,56 @@ def print_cards():
     print(f"Your cards: {player}, current score: {sum(player)}")
     print(f"Computer's first card: {dealer[0]}")
 
-def continue_game(switch, user_input):
+def print_final_cards():
+    print(f"Your final hand: {player}, final score: {sum(player)}")
+    print(f"Computer's final hand: {dealer}, final score: {sum(dealer)}")     
+
+def continue_game(user_input):
      if user_input == "y":
-          switch == True
+          switch = True
           return switch
      elif user_input == "n":
-          switch == False
+          switch = False
           return switch
 
-def blackjack_start ():
-     user_input = input("Do you want to play a game of Blackjack Type 'y' or 'n': ") 
-
 def dealer_turn ():
+     while (sum(dealer) < 17):
+          dealer.append(deal_card())
      
-
 def fn_blackjack():
-    switch = True
+    user_input = input("Do you want to play a game of Blackjack Type 'y' or 'n': ")
+    switch = continue_game(user_input)
     while switch:
-        
-
-        print("\n"*100)
-        print(logo)
-        first_round()
-        print_cards()
-        switch_2 = True
-        user_input = input("Type 'y' to get another card, type 'n' to pass: ")
-        continue_game(switch_2, user_input)
-        while sum(player) < 22 and switch_2 == True:
-             player.append(deal_card())
-             print_cards()
-             if sum(player) > 21:
-                  break
-             user_input = input("Type 'y' to get another card, type 'n' to pass: ")
-             continue_game(switch_2, user_input)
-        if sum(player) > 21:
-             print()
-        switch = False
+     dealer.clear()
+     player.clear()
+     print("\n"*100)
+     print(logo)
+     first_round()
+     print_cards()
+     user_input = input("Type 'y' to get another card, type 'n' to pass: ")
+     switch_2 = continue_game(user_input)
+     while (sum(player) < 22 and switch_2):
+          player.append(deal_card())
+          print_cards()
+          if sum(player) > 21:
+               break
+          user_input = input("Type 'y' to get another card, type 'n' to pass: ")
+          switch_2 = continue_game(user_input)
+     if sum(player) > 21:
+          print_final_cards()
+          print("You lose. :*(")
+     elif sum(player) < 22:
+          dealer_turn()
+          if sum(dealer) > 21 or sum(dealer) < sum (player):
+               print_final_cards()
+               print("You win. :D")
+          elif sum(dealer) == sum(player):
+               print_final_cards()
+               print("You Draw. :|")
+          elif sum(dealer) > sum(player):
+               print_final_cards()
+               print("You lose. :*(")          
+     user_input = input("Do you want to play a game of Blackjack Type 'y' or 'n': ")
+     switch = continue_game(user_input)
 
 fn_blackjack()
