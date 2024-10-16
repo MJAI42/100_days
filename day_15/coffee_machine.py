@@ -11,7 +11,7 @@ def print_resources ():
         print(f"{key}: {resources[key]}")
 
 #Choose a coffee
-def which_coffee():
+def which_coffee(): 
     switch = True
     while switch:
         coffee = input("What would you like? (espresso / latte / cappuccino): ")
@@ -62,7 +62,6 @@ def make_coffee(coffee):
         if resources[key] < menu[coffee]["ingredients"][key]:
             print(f"Sorry there is not enough {key}.")
             count +=1
-
     if count == 0:
         print_resources()
         switch_2 = payment(coffee)
