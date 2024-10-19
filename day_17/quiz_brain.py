@@ -29,9 +29,12 @@ class QuizBrain:
             print("You got it wrong!")            
         print(f"The correct answer was: {answer}")
         self.question_number += 1
-        return self.score
 
 
-    def print_result(self, score):
-        print(f"You current score is: {score}/{self.question_number}")
+    def print_result(self):
+        print(f"You current score is: {self.score}/{self.question_number}")
         print("\n"*3)
+    
+    def print_final_result(self):
+        print("You've completed the Quizz!")
+        print(f"Your final result was: {self.score}/{self.question_number}")

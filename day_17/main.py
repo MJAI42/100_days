@@ -11,5 +11,6 @@ quiz = QuizBrain(question_bank)
 
 while quiz.still_has_questions():
     user_answer = quiz.next_question()
-    score = quiz.check_answer(question_bank, user_answer)
-    quiz.print_result(score)
+    quiz.check_answer(question_bank, user_answer)
+    quiz.print_result()
+quiz.print_final_result()
