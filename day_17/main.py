@@ -8,9 +8,8 @@ for data in question_data:
     question_bank.append(question)
 
 quiz = QuizBrain(question_bank)
-score = 0
 
 while quiz.still_has_questions():
     user_answer = quiz.next_question()
-    score += quiz.check_answer(question_bank, user_answer)
+    score = quiz.check_answer(question_bank, user_answer)
     quiz.print_result(score)
