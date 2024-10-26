@@ -8,7 +8,7 @@ switch = True
 winner = str
 while switch == True:
     name = input("What is your name?: ")
-    bid = input("What's your bid?: $")
+    bid = int(input("What's your bid?: $"))
 
     participants[name] = bid
     another_bidder = input("Are there any other bidders? Type \'yes\' or \'no\'\n")

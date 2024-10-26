@@ -11,10 +11,9 @@ def deal_card():
     return cards[rand_int]
 
 def first_round():
-        player.append(deal_card())
-        player.append(deal_card())
-        dealer.append(deal_card())
-        dealer.append(deal_card())
+        for _ in range(2):
+          player.append(deal_card())
+          dealer.append(deal_card())
 
 def print_cards():
     print(f"Your cards: {player}, current score: {sum(player)}")
