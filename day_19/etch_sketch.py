@@ -14,7 +14,7 @@ def move_left():
 def move_right():
     tim.right(10)
 def clear_screen():
-    screen.clearscreen()
+    tim.reset()
 screen.onkey(move_fwd, "w")
 screen.onkey(move_bkw, "s")
 screen.onkey(move_left, "a")
