@@ -1,9 +1,15 @@
 from turtle import Turtle, Screen
+MOVE_DISTANCE = 10
+UP = 90
+DOWN = 270
+LEFT = 180
+RIGHT = 0
 
 class Snake:
     def __init__(self):
         self.snake_body = []
         self.create_snake()
+        self.head = self.snake_body[0]
 
 #Creates a snake of 3 squares and places it in the middle of the screen 
     def create_snake(self):
@@ -14,7 +20,7 @@ class Snake:
                 snake.shapesize(0.5,0.5,1)
                 snake.penup()
                 snake.setposition(x,0)
-                x -= 10
+                x -= MOVE_DISTANCE
                 self.snake_body.append(snake)
 
 #Moves the snake forward   
@@ -23,7 +29,7 @@ class Snake:
                 x = self.snake_body[i - 1].xcor()
                 y = self.snake_body[i - 1].ycor()
                 self.snake_body[i].goto(x, y)
-            self.snake_body[0].forward(10)
+            self.head.forward(MOVE_DISTANCE)
 
 #Checks if the snake hit a wall
     def hit_a_wall(self, switch, x, y):
@@ -39,23 +45,23 @@ class Snake:
             switch = True
         return switch
 
-#Moves the snake left or right:
-    def left():
-        snake_body[0].left(90)
-        snake_body[0].forward(10)
+#Rotates the snake up:
+    def up(self):
+        if self.head.heading() != DOWN:
+            self.head.setheading(UP)
 
-    def screen_left(screen, left):
-        screen.onkey(left, "a")
-        screen.listen()
+#Rotates the snake down:
+    def down(self):
+        if self.head.heading() != UP:
+            self.head.setheading(DOWN)   
 
-    def right():
-        snake_body[0].right(90)
-        snake_body[0].forward(10)
+#Rotates the snake left:
+    def left(self):
+        if self.head.heading() != RIGHT:
+            self.head.setheading(LEFT)
 
-    def screen_right(screen, right):
-        screen.onkey(right, "d")
-        screen.listen()
-    
-
-
+#Rotates the snake right:
+    def right(self):
+        if self.head.heading() != LEFT:
+            self.head.setheading(RIGHT)
 

@@ -13,7 +13,12 @@ snake = Snake()
 switch = True
 while switch:
     screen.update()
-    time.sleep(0.5)
+    time.sleep(0.3)
     snake.move()
+    screen.listen()
+    screen.onkey(snake.up, "Up")
+    screen.onkey(snake.down, "Down")
+    screen.onkey(snake.left, "Left")
+    screen.onkey(snake.right, "Right")
 
 screen.exitonclick()
