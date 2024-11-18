@@ -16,7 +16,7 @@ class Snake:
             x = 0
             for i in range (0, 3):
                 snake = Turtle("square")
-                snake.color("white", "green")
+                snake.color("green", "green")
                 snake.shapesize(0.5,0.5,1)
                 snake.penup()
                 snake.setposition(x,0)
