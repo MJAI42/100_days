@@ -1,4 +1,5 @@
 from turtle import Turtle, Screen
+from scoreboard import Scoreboard
 MOVE_DISTANCE = 10
 UP = 90
 DOWN = 270
