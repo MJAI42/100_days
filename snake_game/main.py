@@ -23,9 +23,12 @@ screen.onkey(snake.right, "Right")
 switch = True
 while switch:
     screen.update()
-    time.sleep(0.3)
+    time.sleep(0.1)
     snake.move()
     if snake.head.distance(food) < 10:
         food.refresh()
         scoreboard.increase_score()
+        snake.add_snake()
+    switch = snake.hit_a_wall()
+scoreboard.game_over()
 screen.exitonclick()
